@@ -3,6 +3,8 @@ import NavBar from '@/components/NavBar';
 import CategorySidebar from '@/components/CategorySidebar';
 import SkillCard from '@/components/SkillCard';
 import Footer from '@/components/Footer';
+import { buttonVariants } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 // Sample skill data
 const skills = [
@@ -89,46 +91,63 @@ const Home = () => {
         <CategorySidebar />
         
         <main className="flex-grow p-6">
-          <div className="mb-8 ml-2">
-            <h1 className="text-3xl text-white font-light tracking-wide mb-2">Explore Skills</h1>
-            <p className="text-white/70 font-light">Discover skills you want to learn, or share your own expertise</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            <div className="col-span-full">
-              <div className="bg-gradient-to-r from-skill-purple/10 to-skill-cyan/10 rounded-lg p-6 border border-skill-purple/20 backdrop-blur-sm">
-                <h2 className="text-xl text-white font-light tracking-wide mb-4">Featured Skills</h2>
-                <p className="text-white/70 mb-4 font-light">Top picks from our community this week</p>
-                <div className="flex flex-wrap gap-3">
-                  <span className="px-3 py-1 bg-skill-purple/10 border border-skill-purple/30 rounded-full text-white text-sm">Programming</span>
-                  <span className="px-3 py-1 bg-skill-cyan/10 border border-skill-cyan/30 rounded-full text-white text-sm">Design</span>
-                  <span className="px-3 py-1 bg-skill-purple/10 border border-skill-purple/30 rounded-full text-white text-sm">Languages</span>
-                  <span className="px-3 py-1 bg-skill-cyan/10 border border-skill-cyan/30 rounded-full text-white text-sm">Music</span>
-                </div>
+          <div className="mb-12 ml-2">
+            <div className="bg-gradient-to-r from-skill-purple/10 to-skill-cyan/10 rounded-2xl p-8 border border-skill-purple/20 backdrop-blur-sm mb-8">
+              <h1 className="text-4xl text-white font-light tracking-wide mb-4">
+                Discover & Share
+                <span className="text-skill-purple ml-2 font-normal">Skills</span>
+              </h1>
+              <p className="text-white/70 font-light text-lg max-w-2xl leading-relaxed mb-6">
+                Join our community of passionate learners and experts. Share your expertise or discover new skills from professionals around the world.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <a href="#skills" className={cn(buttonVariants({ variant: "default" }), 
+                  "bg-skill-purple/90 hover:bg-skill-purple text-white px-6 py-3")}>
+                  Explore Skills
+                </a>
+                <a href="#share" className={cn(buttonVariants({ variant: "outline" }), 
+                  "border-skill-purple/50 text-white hover:bg-skill-purple/10")}>
+                  Share Your Expertise
+                </a>
               </div>
             </div>
             
-            {skills.map((skill) => (
-              <SkillCard 
-                key={skill.id}
-                title={skill.title}
-                icon={skill.icon}
-                description={skill.description}
-                level={skill.level}
-                color={skill.color}
-                image={skill.image}
-              />
-            ))}
+            <div className="flex items-center justify-between mb-8">
+              <div>
+                <h2 className="text-2xl text-white font-light tracking-wide mb-2">Featured Skills</h2>
+                <p className="text-white/70 font-light">Top picks from our community this week</p>
+              </div>
+              <div className="flex gap-3">
+                <span className="px-3 py-1 bg-skill-purple/10 border border-skill-purple/30 rounded-full text-white text-sm">Programming</span>
+                <span className="px-3 py-1 bg-skill-cyan/10 border border-skill-cyan/30 rounded-full text-white text-sm">Design</span>
+                <span className="px-3 py-1 bg-skill-purple/10 border border-skill-purple/30 rounded-full text-white text-sm">Languages</span>
+                <span className="px-3 py-1 bg-skill-cyan/10 border border-skill-cyan/30 rounded-full text-white text-sm">Music</span>
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12" id="skills">
+              {skills.map((skill) => (
+                <SkillCard 
+                  key={skill.id}
+                  title={skill.title}
+                  icon={skill.icon}
+                  description={skill.description}
+                  level={skill.level}
+                  color={skill.color}
+                  image={skill.image}
+                />
+              ))}
+            </div>
           </div>
           
-          <div className="bg-gradient-to-r from-skill-purple/5 to-transparent rounded-lg p-6 backdrop-blur-sm border border-skill-purple/20">
-            <div className="flex flex-col md:flex-row items-center justify-between">
+          <div className="bg-gradient-to-r from-skill-purple/5 via-skill-purple/10 to-transparent rounded-lg p-8 backdrop-blur-sm border border-skill-purple/20">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
-                <h2 className="text-xl text-white font-light tracking-wide mb-2">Ready to share your skills?</h2>
+                <h2 className="text-2xl text-white font-light tracking-wide mb-2">Ready to share your expertise?</h2>
                 <p className="text-white/70 font-light">Join our community of skill swappers and start teaching today</p>
               </div>
-              <button className="mt-4 md:mt-0 px-6 py-3 bg-skill-purple/90 hover:bg-skill-purple text-white rounded-lg transition-colors font-light tracking-wide">
-                Offer Your Skills
+              <button className="px-6 py-3 bg-skill-purple text-white rounded-lg transition-colors hover:bg-skill-purple-light font-light tracking-wide whitespace-nowrap">
+                Start Teaching
               </button>
             </div>
           </div>
