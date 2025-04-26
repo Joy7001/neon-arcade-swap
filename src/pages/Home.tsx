@@ -3,7 +3,6 @@ import NavBar from '@/components/NavBar';
 import CategorySidebar from '@/components/CategorySidebar';
 import SkillCard from '@/components/SkillCard';
 import Footer from '@/components/Footer';
-import { Code, Music, Camera, Book, Edit, Video } from 'lucide-react';
 
 // Sample skill data
 const skills = [
@@ -13,7 +12,8 @@ const skills = [
     icon: "⚛️",
     description: "Front-end web development with React, hooks, context API, and state management libraries.",
     level: "Advanced",
-    color: "skill-purple"
+    color: "skill-purple",
+    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80"
   },
   {
     id: 2,
@@ -21,7 +21,8 @@ const skills = [
     icon: "🐍",
     description: "Data analysis using Python with pandas, numpy, and data visualization libraries.",
     level: "Intermediate",
-    color: "skill-cyan"
+    color: "skill-cyan",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80"
   },
   {
     id: 3,
@@ -29,7 +30,8 @@ const skills = [
     icon: "🎨",
     description: "Creating beautiful user interfaces and experiences with Figma and Adobe XD.",
     level: "Expert",
-    color: "skill-purple"
+    color: "skill-purple",
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80"
   },
   {
     id: 4,
@@ -37,7 +39,8 @@ const skills = [
     icon: "🎸",
     description: "From basic chords to advanced techniques. Electric and acoustic styles.",
     level: "All Levels",
-    color: "skill-cyan"
+    color: "skill-cyan",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
   },
   {
     id: 5,
@@ -45,7 +48,8 @@ const skills = [
     icon: "🇪🇸",
     description: "Conversational Spanish for beginners and intermediate learners with focus on Latin American dialects.",
     level: "Beginner Friendly",
-    color: "skill-purple"
+    color: "skill-purple",
+    image: "https://images.unsplash.com/photo-1503455637927-730b260a6b15?auto=format&fit=crop&w=800&q=80"
   },
   {
     id: 6,
@@ -53,7 +57,8 @@ const skills = [
     icon: "📷",
     description: "Learn composition, lighting, and camera settings for stunning photos every time.",
     level: "Beginner",
-    color: "skill-cyan"
+    color: "skill-cyan",
+    image: "https://images.unsplash.com/photo-1519389950473-47a04ca018e0?auto=format&fit=crop&w=800&q=80"
   },
   {
     id: 7,
@@ -61,7 +66,8 @@ const skills = [
     icon: "📊",
     description: "Social media strategies, SEO basics, and content marketing techniques.",
     level: "Intermediate",
-    color: "skill-purple"
+    color: "skill-purple",
+    image: "https://images.unsplash.com/photo-1505373467743-644468773a79?auto=format&fit=crop&w=800&q=80"
   },
   {
     id: 8,
@@ -69,7 +75,8 @@ const skills = [
     icon: "🤖",
     description: "Introduction to ML algorithms, supervised and unsupervised learning with practical examples.",
     level: "Advanced",
-    color: "skill-cyan"
+    color: "skill-cyan",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
   }
 ];
 
@@ -109,6 +116,7 @@ const Home = () => {
                 description={skill.description}
                 level={skill.level}
                 color={skill.color}
+                image={skill.image}
               />
             ))}
           </div>
