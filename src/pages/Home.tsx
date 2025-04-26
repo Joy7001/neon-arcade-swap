@@ -1,4 +1,3 @@
-
 import React from 'react';
 import NavBar from '@/components/NavBar';
 import CategorySidebar from '@/components/CategorySidebar';
@@ -84,20 +83,20 @@ const Home = () => {
         
         <main className="flex-grow p-6">
           <div className="mb-8 ml-2">
-            <h1 className="font-future text-3xl text-white mb-2">Explore Skills</h1>
-            <p className="text-white/70">Discover skills you want to learn, or share your own expertise</p>
+            <h1 className="text-3xl text-white font-light tracking-wide mb-2">Explore Skills</h1>
+            <p className="text-white/70 font-light">Discover skills you want to learn, or share your own expertise</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             <div className="col-span-full">
-              <div className="bg-gradient-to-r from-skill-purple/20 to-skill-cyan/20 rounded-lg p-6 border border-skill-purple/30">
-                <h2 className="font-future text-xl text-white mb-4">Featured Skills</h2>
-                <p className="text-white/70 mb-4">Top picks from our community this week</p>
+              <div className="bg-gradient-to-r from-skill-purple/10 to-skill-cyan/10 rounded-lg p-6 border border-skill-purple/20 backdrop-blur-sm">
+                <h2 className="text-xl text-white font-light tracking-wide mb-4">Featured Skills</h2>
+                <p className="text-white/70 mb-4 font-light">Top picks from our community this week</p>
                 <div className="flex flex-wrap gap-3">
-                  <span className="px-3 py-1 bg-skill-purple/20 border border-skill-purple/50 rounded-full text-white text-sm">Programming</span>
-                  <span className="px-3 py-1 bg-skill-cyan/20 border border-skill-cyan/50 rounded-full text-white text-sm">Design</span>
-                  <span className="px-3 py-1 bg-skill-purple/20 border border-skill-purple/50 rounded-full text-white text-sm">Languages</span>
-                  <span className="px-3 py-1 bg-skill-cyan/20 border border-skill-cyan/50 rounded-full text-white text-sm">Music</span>
+                  <span className="px-3 py-1 bg-skill-purple/10 border border-skill-purple/30 rounded-full text-white text-sm">Programming</span>
+                  <span className="px-3 py-1 bg-skill-cyan/10 border border-skill-cyan/30 rounded-full text-white text-sm">Design</span>
+                  <span className="px-3 py-1 bg-skill-purple/10 border border-skill-purple/30 rounded-full text-white text-sm">Languages</span>
+                  <span className="px-3 py-1 bg-skill-cyan/10 border border-skill-cyan/30 rounded-full text-white text-sm">Music</span>
                 </div>
               </div>
             </div>
@@ -114,13 +113,13 @@ const Home = () => {
             ))}
           </div>
           
-          <div className="bg-skill-black border border-skill-purple/30 rounded-lg p-6 mb-8">
+          <div className="bg-gradient-to-r from-skill-purple/5 to-transparent rounded-lg p-6 backdrop-blur-sm border border-skill-purple/20">
             <div className="flex flex-col md:flex-row items-center justify-between">
               <div>
-                <h2 className="font-future text-xl text-white mb-2">Ready to share your skills?</h2>
-                <p className="text-white/70">Join our community of skill swappers and start teaching today</p>
+                <h2 className="text-xl text-white font-light tracking-wide mb-2">Ready to share your skills?</h2>
+                <p className="text-white/70 font-light">Join our community of skill swappers and start teaching today</p>
               </div>
-              <button className="mt-4 md:mt-0 px-6 py-3 bg-skill-purple hover:bg-skill-purple-light text-white rounded-lg transition-colors font-future">
+              <button className="mt-4 md:mt-0 px-6 py-3 bg-skill-purple/90 hover:bg-skill-purple text-white rounded-lg transition-colors font-light tracking-wide">
                 Offer Your Skills
               </button>
             </div>

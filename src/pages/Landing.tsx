@@ -36,7 +36,7 @@ const Landing = () => {
           
           <div className="flex flex-col items-center justify-center space-y-6">
             <RetroButton to="/home" className="animate-float">
-              START GAME
+              GET STARTED
             </RetroButton>
             
             <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
