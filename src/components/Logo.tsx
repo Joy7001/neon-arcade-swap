@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Text, HStack } from '@chakra-ui/react';
 
 interface LogoProps {
   isRetro?: boolean;
@@ -7,12 +8,40 @@ interface LogoProps {
 
 const Logo: React.FC<LogoProps> = ({ isRetro = false }) => {
   return (
-    <div className={`logo ${isRetro ? 'font-pixel text-xl' : 'font-light text-xl tracking-wide'}`}>
-      <span className="text-white">Skill</span>
-      <span className="text-skill-purple font-normal">S</span>
-      <span className="text-skill-cyan font-normal">S</span>
-      <span className="text-white">wap</span>
-    </div>
+    <HStack className="logo" spacing={0}>
+      <Text 
+        fontFamily={isRetro ? "'Press Start 2P', cursive" : "inherit"}
+        fontWeight="light" 
+        fontSize="xl"
+        color="white"
+      >
+        Skill
+      </Text>
+      <Text 
+        fontFamily={isRetro ? "'Press Start 2P', cursive" : "inherit"}
+        fontWeight="normal" 
+        fontSize="xl"
+        color="#9b87f5" // skill-purple
+      >
+        S
+      </Text>
+      <Text 
+        fontFamily={isRetro ? "'Press Start 2P', cursive" : "inherit"}
+        fontWeight="normal" 
+        fontSize="xl"
+        color="#38B2AC" // skill-cyan
+      >
+        S
+      </Text>
+      <Text 
+        fontFamily={isRetro ? "'Press Start 2P', cursive" : "inherit"}
+        fontWeight="light" 
+        fontSize="xl"
+        color="white"
+      >
+        wap
+      </Text>
+    </HStack>
   );
 };
 
