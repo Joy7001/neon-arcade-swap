@@ -3,6 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ChakraProvider } from './theme/ChakraProvider';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Import your pages here
 import Landing from './pages/Landing';

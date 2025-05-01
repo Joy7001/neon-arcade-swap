@@ -1,3 +1,4 @@
+
 import * as React from "react"
 
 import {
@@ -107,11 +108,9 @@ export function Chart({
           <div
             className={cn(
               "h-2.5 w-2.5",
-              {
-                "w-1": someCondition,
-                "w-0 border-[1.5px] border-dashed bg-transparent": otherCondition,
-                "my-0.5": anotherCondition,
-              }
+              someCondition ? "w-1" : "",
+              otherCondition ? "w-0 border-[1.5px] border-dashed bg-transparent" : "",
+              anotherCondition ? "my-0.5" : ""
             )}
           ></div>
         </div>
