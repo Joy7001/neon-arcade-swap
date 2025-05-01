@@ -1,11 +1,7 @@
 
 import React from 'react';
 
-interface LogoProps {
-  isRetro?: boolean;
-}
-
-const Logo: React.FC<LogoProps> = ({ isRetro = false }) => {
+const Logo = ({ isRetro = false }) => {
   return (
     <div className={`logo ${isRetro ? 'font-pixel text-xl' : 'font-light text-xl tracking-wide'}`}>
       <span className="text-white">Skill</span>
