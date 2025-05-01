@@ -1,26 +1,29 @@
 
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ChakraProvider } from './theme/ChakraProvider';
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Landing from "./pages/Landing";
+import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
 
-// Import your pages here
-import Landing from './pages/Landing';
-import Home from './pages/Home';
+const queryClient = new QueryClient();
 
-function App() {
-  return (
-    <ChakraProvider>
-      <Router>
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/home" element={<Home />} />
-          {/* Add other routes as needed */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
-      </Router>
-    </ChakraProvider>
-  );
-}
+      </BrowserRouter>
+    </TooltipProvider>
+  </QueryClientProvider>
+);
 
 export default App;

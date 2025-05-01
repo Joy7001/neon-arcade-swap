@@ -3,16 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
 import { Search } from 'lucide-react';
-import { 
-  Box, 
-  Flex, 
-  Input, 
-  InputGroup, 
-  InputLeftElement, 
-  Button, 
-  Container,
-  Link as ChakraLink
-} from '@chakra-ui/react';
+import { Input } from '@/components/ui/input';
 
 interface NavBarProps {
   isRetro?: boolean;
@@ -20,91 +11,51 @@ interface NavBarProps {
 
 const NavBar: React.FC<NavBarProps> = ({ isRetro = false }) => {
   return (
-    <Box
-      as="nav"
-      borderBottom="1px"
-      borderColor="rgba(155, 135, 245, 0.2)"
-      bg="rgba(7, 7, 7, 0.5)"
-      backdropFilter="blur(8px)"
-      position="sticky"
-      top="0"
-      zIndex="50"
-    >
-      <Container maxW="7xl" px={{ base: 4, sm: 6, lg: 8 }}>
-        <Flex h="16" alignItems="center" justifyContent="space-between">
-          <Flex alignItems="center" gap={4}>
+    <nav className="w-full border-b border-skill-purple/20 bg-skill-black/50 backdrop-blur-md sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          <div className="flex items-center space-x-4">
             <Link to={isRetro ? '/' : '/home'}>
               <Logo isRetro={isRetro} />
             </Link>
-          </Flex>
+          </div>
           
           {!isRetro && (
-            <Flex display={{ base: "none", md: "flex" }} flex="1" maxW="lg" mx={8}>
-              <InputGroup>
-                <InputLeftElement pointerEvents="none">
-                  <Box as={Search} color="#9b87f5" h={4} w={4} />
-                </InputLeftElement>
+            <div className="hidden md:flex items-center flex-1 max-w-lg mx-8">
+              <div className="relative w-full">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-skill-purple h-4 w-4" />
                 <Input 
                   type="search" 
                   placeholder="Search skills..." 
-                  pl={10} 
-                  bg="transparent" 
-                  border="1px" 
-                  borderColor="rgba(155, 135, 245, 0.3)" 
-                  _focus={{ borderColor: "#9b87f5" }}
-                  borderRadius="full" 
+                  className="w-full pl-10 bg-transparent border border-skill-purple/30 focus:border-skill-purple rounded-full" 
                 />
-              </InputGroup>
-            </Flex>
+              </div>
+            </div>
           )}
           
-          <Flex alignItems="center" gap={4}>
+          <div className="flex items-center space-x-4">
             {isRetro ? (
-              <Link to="/home">
-                <Button 
-                  bg="#9b87f5" 
-                  color="white" 
-                  fontWeight="light" 
-                  fontSize="sm" 
-                  borderRadius="md" 
-                  _hover={{ bg: "#a797f7" }}
-                  px={4}
-                  py={2}
-                >
-                  GET STARTED
-                </Button>
+              <Link 
+                to="/home" 
+                className="px-4 py-2 bg-skill-purple text-white font-light text-sm rounded hover:bg-skill-purple-light transition-colors"
+              >
+                GET STARTED
               </Link>
             ) : (
               <>
-                <Link to="/">
-                  <ChakraLink 
-                    color="rgba(255, 255, 255, 0.7)" 
-                    _hover={{ color: "white" }}
-                    transition="colors 0.2s"
-                    fontWeight="light"
-                  >
-                    Back to Intro
-                  </ChakraLink>
-                </Link>
-                <Link to="#">
-                  <Button 
-                    bg="rgba(155, 135, 245, 0.9)" 
-                    _hover={{ bg: "#9b87f5" }} 
-                    color="white" 
-                    fontWeight="light" 
-                    borderRadius="md"
-                    px={4}
-                    py={2}
-                  >
-                    Sign In
-                  </Button>
+                <Link to="/" className="text-white/70 hover:text-white transition-colors font-light">Back to Intro</Link>
+                <Link 
+                  to="#" 
+                  className="px-4 py-2 bg-skill-purple/90 hover:bg-skill-purple text-white font-light rounded transition-colors"
+                >
+                  Sign In
                 </Link>
               </>
             )}
-          </Flex>
-        </Flex>
-      </Container>
-    </Box>
+          </div>
+        </div>
+      </div>
+    </nav>
   );
 };
 
